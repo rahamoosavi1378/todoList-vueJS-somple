@@ -34,7 +34,7 @@ export default {
         },
         sendText() {
             if (this.text.trim()){
-                this.$store.commit('addToListItems', this.text)
+                this.$store.commit('lol/addToListItems', this.text)
                 this.text = ''
             }
         },

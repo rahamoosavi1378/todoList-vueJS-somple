@@ -1,9 +1,9 @@
 <template>
     <div class="todoList-content">
         <div class="todoList-content__items" id="containerToDoList">
-            <template v-if="$store.state.listItems">
+            <template v-if="$store.state.lol.listItems">
                 <transition-group name="listItem">
-                    <div class="todoList-content__item" v-for="(item,index) in $store.state.listItems" :key="index">
+                    <div class="todoList-content__item" v-for="(item,index) in $store.state.lol.listItems" :key="index">
                         <p class="todoList-content__item-desc">{{ item }}</p> <!--class : line-through-->
                         <button class="todoList-content__item-delete" @click="itemDelete(index)">×</button>
                     </div>
@@ -29,7 +29,7 @@ export default {
     },
     created() {
         // this.listItem = JSON.parse(localStorage.getItem('listItem')) | []
-        this.$store.commit('setFromLocalStorageToListItem')
+        this.$store.commit('lol/setFromLocalStorageToListItem')
     },
     watch: {
         // listItem() {
@@ -39,7 +39,7 @@ export default {
     methods: {
         itemDelete(index) {
             // document.querySelector().remove()
-            this.$store.commit('deleteItemOfList', index)
+            this.$store.commit('lol/deleteItemOfList', index)
         }
     }
 }
