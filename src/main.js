@@ -1,10 +1,8 @@
-import { StoreVar } from '@/Store'
-import App from '@/App.vue'
-
 import {createApp} from 'vue'
-import {createStore} from 'vuex'
 
-const Store = createStore(StoreVar)
+import App from '@/App.vue'
+import Store from './StoreDB/Store'
+// import {createStore} from 'vuex'
 
 const app = createApp(App)
 app.use(Store)
